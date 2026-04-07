@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Elegí la mejor opción para dejar de improvisar y empezar a vender mejor en redes sociales."
+  >
+  <title>Productos Digitales para Redes Sociales</title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --bg: #f3ece3;
+      --paper: rgba(255, 252, 246, 0.9);
+      --card: #fffdfa;
+      --text: #221b17;
+      --muted: #6d5e54;
+      --line: rgba(34, 27, 23, 0.1);
+      --accent: #d86f45;
+      --accent-dark: #b85128;
+      --accent-soft: #f3d6c8;
+      --shadow: 0 22px 60px rgba(73, 46, 33, 0.12);
+      --radius-lg: 28px;
+      --radius-md: 22px;
+      --radius-sm: 14px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      line-height: 1.5;
+      background:
+        radial-gradient(circle at top left, rgba(216, 111, 69, 0.16), transparent 24%),
+        radial-gradient(circle at top right, rgba(243, 214, 200, 0.65), transparent 22%),
+        linear-gradient(180deg, #fbf6ef 0%, var(--bg) 58%, #f6efe7 100%);
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Syne", sans-serif;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .hero {
+      padding: 28px 0 36px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      margin: 14px 0;
+      max-width: 10ch;
+    }
+
+    .hero-shell,
+    .offer-card,
+    .reason-card,
+    .closing-card {
+      background: var(--paper);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.62);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-lg);
+    }
+
+    .hero-shell {
+      display: grid;
+      gap: 24px;
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-shell::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      top: -40px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(216, 111, 69, 0.18), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(216, 111, 69, 0.12);
+      color: var(--accent-dark);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .hero p,
+    .section p,
+    li {
+      color: var(--muted);
+    }
+
+    .hero-copy {
+      max-width: 56ch;
+      font-size: 1.08rem;
+    }
+
+    .hero-points {
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-point {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255, 253, 250, 0.86);
+      border: 1px solid var(--line);
+    }
+
+    .hero-point strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .section {
+      margin: 34px 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .section-head {
+      max-width: 58ch;
+      margin-bottom: 24px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      margin: 12px 0;
+    }
+
+    .offer-card {
+      background: linear-gradient(180deg, rgba(255, 253, 249, 0.96) 0%, rgba(255, 248, 241, 0.94) 100%);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: relative;
+    }
+
+    .offer-card h3 {
+      font-size: 1.55rem;
+      margin: 0;
+    }
+
+    .highlight {
+      border: 2px solid rgba(184, 81, 40, 0.45);
+      background: linear-gradient(180deg, rgba(255, 249, 245, 0.98) 0%, rgba(255, 241, 233, 0.96) 100%);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 25px;
+      text-decoration: none;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      color: #fff;
+      box-shadow: 0 16px 32px rgba(184, 81, 40, 0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 2px 0 0;
+      color: var(--text);
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #8f7f74;
+      font-size: 0.95rem;
+    }
+
+    .badge {
+      color: #b42318;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .most-chosen {
+      color: var(--accent-dark);
+      font-weight: 700;
+      margin-bottom: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+    }
+
+    .offer-copy {
+      min-height: 84px;
+    }
+
+    .offer-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .offer-card li {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .offer-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent) 0%, #f1a37b 100%);
+      box-shadow: 0 0 0 4px rgba(216, 111, 69, 0.12);
+    }
+
+    .offer-footer {
+      margin-top: auto;
+      padding-top: 8px;
+    }
+
+    .reasons {
+      display: grid;
+      gap: 18px;
+    }
+
+    .reason-card {
+      padding: 24px;
+    }
+
+    .reason-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .closing-card {
+      padding: 32px;
+      text-align: center;
+      background: linear-gradient(135deg, #241d19 0%, #3a2d26 100%);
+      color: #fff7f1;
+    }
+
+    .closing-card p {
+      color: rgba(255, 247, 241, 0.82);
+      max-width: 48ch;
+      margin: 12px auto 0;
+    }
+
+    .closing-card .btn {
+      margin-top: 22px;
+      background: linear-gradient(135deg, #ff996a 0%, #d86f45 100%);
+    }
+
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: start;
+      }
+
+      .hero-shell {
+        grid-template-columns: 1.08fr 0.92fr;
+        align-items: center;
+      }
+
+      .reasons {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .highlight {
+        transform: translateY(-8px);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 16px;
+      }
+
+      .hero-shell,
+      .offer-card,
+      .reason-card,
+      .closing-card {
+        border-radius: 22px;
+      }
+
+      .hero-shell,
+      .offer-card,
+      .closing-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-shell">
+        <div>
+          <span class="eyebrow">Productos digitales para redes sociales</span>
+          <h1>Elegí la herramienta que te ayude a vender mejor en redes</h1>
+          <p class="hero-copy">
+            Si ya sabés que improvisar te hace perder tiempo, acá tenés recursos concretos para ganar
+            claridad, crear mejor y convertir más.
+          </p>
+        </div>
+
+        <div class="hero-points">
+          <div class="hero-point">
+            <strong>Ideas accionables</strong>
+            <p>Recursos pensados para aplicar rápido, sin quedarte en la teoría.</p>
+          </div>
+          <div class="hero-point">
+            <strong>Estrategia + ejecución</strong>
+            <p>Elegí solo claridad, solo ideas o la combinación completa.</p>
+          </div>
+          <div class="hero-point">
+            <strong>Una oferta para cada momento</strong>
+            <p>Desde un producto puntual hasta el combo más completo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow">Elegí tu siguiente paso</span>
+        <h2>¿Qué necesitás hoy para avanzar con más claridad?</h2>
+        <p>
+          Cada opción responde a una necesidad distinta. Podés ir por ideas rápidas, estrategia de
+          fondo o la combinación que te permita entender y ejecutar a la vez.
+        </p>
+      </div>
+
+      <div class="grid">
+        <article class="offer-card">
+          <h3>Pack de 50 Prompts de IA</h3>
+          <p class="offer-copy">Dejá de pensar qué publicar y empezá a crear contenido en minutos.</p>
+          <ul>
+            <li>50 prompts listos para copiar y pegar.</li>
+            <li>Ideas para vender, educar y generar interacción.</li>
+            <li>Ideal si te quedás sin ideas o perdés tiempo pensando.</li>
+          </ul>
+          <div class="offer-footer">
+            <p><strong>Perfecto si querés destrabar tu contenido rápido.</strong></p>
+            <div class="price">$7 USD</div>
+            <a href="https://mpago.la/2rSY4QW" class="btn" target="_blank" rel="noopener noreferrer">Comprar Prompts</a>
+          </div>
+        </article>
+
+        <article class="offer-card">
+          <h3>Guía Completa de Estrategia</h3>
+          <p class="offer-copy">No es más contenido. Es saber qué hacer, cómo hacerlo y con qué objetivo.</p>
+          <ul>
+            <li>Cómo crear contenido que atrae y convierte.</li>
+            <li>Estructura clara para monetizar tu cuenta.</li>
+            <li>Qué publicar, cómo y para qué.</li>
+          </ul>
+          <div class="offer-footer">
+            <p><strong>Ideal si querés dejar de improvisar y empezar a vender con sentido.</strong></p>
+            <div class="price">$15 USD</div>
+            <a href="https://mpago.la/1GQ6Ka5" class="btn" target="_blank" rel="noopener noreferrer">Comprar Guía</a>
+          </div>
+        </article>
+
+        <article class="offer-card highlight">
+          <div class="most-chosen">Opción más elegida</div>
+          <h3>Combo Completo: Estrategia + Prompts</h3>
+          <p class="offer-copy">No solo sabés qué hacer. También sabés cómo ejecutarlo desde hoy.</p>
+          <ul>
+            <li>Guía completa para entender la estrategia.</li>
+            <li>50 prompts para aplicar sin perder tiempo.</li>
+            <li>Pasás de la teoría a la acción en el mismo día.</li>
+          </ul>
+          <div class="offer-footer">
+            <p><strong>Es la opción más elegida porque te da claridad y ejecución.</strong></p>
+            <div class="old-price">$22 USD</div>
+            <div class="price">$19 USD</div>
+            <div class="badge">Precio promocional por tiempo limitado</div>
+            <p><strong>Si querés resultados más rápido, esta es la mejor decisión.</strong></p>
+            <a href="https://mpago.la/2V5qeao" class="btn" target="_blank" rel="noopener noreferrer">Quiero el Combo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow">Por qué elegirlos</span>
+        <h2>Recursos diseñados para que crear contenido deje de sentirse pesado</h2>
+      </div>
+
+      <div class="reasons">
+        <article class="reason-card">
+          <strong>Menos bloqueo</strong>
+          <p>Vas a tener una base concreta para decidir qué publicar sin empezar de cero cada vez.</p>
+        </article>
+        <article class="reason-card">
+          <strong>Más dirección</strong>
+          <p>Cada producto apunta a que tu contenido tenga intención, mensaje y objetivo comercial.</p>
+        </article>
+        <article class="reason-card">
+          <strong>Aplicación real</strong>
+          <p>No son recursos decorativos. Están pensados para usar hoy mismo en tu negocio.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="closing-card">
+        <h2>Dejá de improvisar y empezá a avanzar con claridad</h2>
+        <p>Elegí la opción que mejor se adapte a tu momento y convertí tu contenido en una herramienta de venta.</p>
+        <a href="https://mpago.la/2V5qeao" class="btn" target="_blank" rel="noopener noreferrer">Ir por el Combo</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
